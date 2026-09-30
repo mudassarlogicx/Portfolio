@@ -334,7 +334,8 @@
 
 .sm-cards-track {
   width: 100%;
-  overflow-x: hidden; 
-  padding: 30px 0;    
-  margin: -30px 0;    
+  overflow-x: clip;
+  overflow-y: visible;
+  padding: 30px 0;
+  margin: -30px 0;
 }

@@ -2,8 +2,10 @@
   position: fixed;
   inset: 0;
 
-  width: 100%;
-  height: 100vh;
+  /* width/height nahi diye: inset: 0 khud visible screen bhar deta hai.
+     Mobile pe 100vh address bar ke saath mila kar bara ho jata hai,
+     isi se content neeche khisak jata tha. */
+  overflow: hidden;
 
   background: var(--bg);
 
@@ -236,6 +238,24 @@
 
   to {
     width: 100%;
+  }
+
+}
+
+/* MOBILE — thora chota aur properly centered */
+
+@media (max-width: 600px) {
+
+  .loading-content {
+    width: min(260px, 56vw);
+  }
+
+  .wordmark-wrapper {
+    margin-top: 22px;
+  }
+
+  .loading-bar {
+    margin-top: 26px;
   }
 
 }

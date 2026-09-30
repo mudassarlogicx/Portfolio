@@ -253,10 +253,12 @@
     min-height: auto;
     display: block;
     padding: 80px 24px;
+    overflow-x: clip;
   }
   .wis-grid {
     flex-direction: column;
     gap: 36px;
+    perspective: none;
   }
   .wis-left { flex-basis: auto; }
   .wis-deck-wrap { flex-basis: auto; max-width: 100%; }
@@ -267,6 +269,7 @@
     flex-direction: column;
     gap: 16px;
     border-radius: 0;
+    perspective: none;
   }
   .wis-card { position: relative; inset: auto; }
   .wis-deck-progress { display: none; }

@@ -1,0 +1,217 @@
+/* ── Button reset — navbar__link & navbar__cta ko <a> jaisa banao ── */
+.navbar__link,
+.navbar__dropdown-link,
+.navbar__dropdown-cta {
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.navbar__inner {
+  width: 100%;
+  max-width: var(--container);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 10px 12px 10px 14px;
+  background: color-mix(in srgb, var(--surface) 72%, transparent);
+  border: 1px solid var(--surface-border);
+  border-radius: 100px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.navbar__brand-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--bg);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+}
+
+.navbar__brand-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  color: var(--text);
+}
+
+/* Desktop links */
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.navbar__link {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--muted);
+  transition: color 0.2s ease;
+}
+
+.navbar__link:hover {
+  color: var(--text);
+}
+
+.navbar__cta {
+  flex-shrink: 0;
+  padding: 11px 22px;
+  border-radius: 100px;
+  background: var(--accent);
+  border: none;
+  color: var(--bg);
+  font-weight: 700;
+  font-size: 14px;
+  transition: transform 0.2s ease, background 0.2s ease;
+  white-space: nowrap;
+}
+
+.navbar__cta:hover {
+  background: var(--accent-dim);
+  transform: translateY(-1px);
+}
+
+/* Toggle wrappers */
+.navbar__mobile-actions {
+  display: none;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Hamburger (mobile only) */
+.navbar__burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.navbar__burger span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--text);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.navbar__burger--open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.navbar__burger--open span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar__burger--open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile dropdown */
+.navbar__dropdown {
+  width: 100%;
+  max-width: var(--container);
+  margin-top: 10px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+  border: 1px solid var(--surface-border);
+  border-radius: 20px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  overflow: hidden;
+  z-index: 101;
+}
+
+.navbar__dropdown-link {
+  width: 100%;
+  text-align: left;
+  padding: 12px 14px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--muted);
+  border-radius: 12px;
+  transition: color 0.2s ease, background 0.2s ease;
+  display: block;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.navbar__dropdown-link:hover {
+  color: var(--text);
+  background: var(--surface);
+}
+
+.navbar__dropdown-cta {
+  width: 100%;
+  margin-top: 6px;
+  padding: 12px 14px;
+  text-align: center;
+  border-radius: 12px;
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 700;
+  font-size: 15px;
+  display: block;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (max-width: 760px) {
+  .navbar__links {
+    display: none;
+  }
+
+  .navbar__brand-name {
+    display: none;
+  }
+
+  .navbar__mobile-actions {
+    display: flex;
+  }
+
+  .navbar__burger {
+    display: flex;
+  }
+}

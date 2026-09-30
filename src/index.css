@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Manrope:wght@400;500;600;700&display=swap');
+
+/* ══════════════════════════════════════════════
+   THEME TOKENS
+   :root = dark theme (default, matches pre-toggle state)
+   [data-theme="light"] = light theme override
+   ══════════════════════════════════════════════ */
+:root {
+  --bg: #0A0E24;
+  --bg-soft: #0D1230;
+  --surface: #151B3D;
+  --surface-border: #262E52;
+  --accent: #FACC15;
+  --accent-dim: #B8940F;
+  --text: #F5F7FB;
+  --muted: #8891B0;
+
+  --font-display: 'Bricolage Grotesque', sans-serif;
+  --font-body: 'Manrope', sans-serif;
+
+  --container: 1200px;
+}
+
+[data-theme="light"] {
+  --bg: #F6F7FB;
+  --bg-soft: #EEF1F8;
+  --surface: #FFFFFF;
+  --surface-border: #E1E4EE;
+  --accent: #CA8A04;
+  --accent-dim: #DDBA6A;
+  --text: #0A0E24;
+  --muted: #5C6478;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  transition: background 0.35s ease, color 0.35s ease;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

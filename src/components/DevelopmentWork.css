@@ -1,0 +1,210 @@
+/* Replace the previous DevelopmentWork stylesheet completely.
+   Existing portfolio theme variables and font families are preserved. */
+.dev-work {
+  --dev-bg: var(--bg, #090b10);
+  --dev-surface: var(--surface, #11151d);
+  --dev-border: var(--surface-border, #292f3a);
+  --dev-text: var(--text, #f4f5f7);
+  --dev-muted: var(--muted, #a2abba);
+  --dev-accent: var(--accent, #facc15);
+  width: 100%;
+  padding: clamp(72px, 8vw, 116px) 32px 80px;
+  background: var(--dev-bg);
+  color: var(--dev-text);
+  font-family: var(--font-body, sans-serif);
+  scroll-margin-top: 80px;
+}
+.dev-work, .dev-work *, .dev-work *::before, .dev-work *::after { box-sizing: border-box; }
+.dev-work .dev-work-inner { width: 100%; max-width: 1100px; margin: 0 auto; }
+.dev-work button, .dev-work a { -webkit-tap-highlight-color: transparent; }
+.dev-work button { font: inherit; }
+.dev-work button:focus-visible, .dev-work a:focus-visible, .dev-work [role="tabpanel"]:focus-visible { outline: 2px solid var(--dev-accent); outline-offset: 4px; }
+
+/* Restore the original large, stacked solid + outline heading. */
+.dev-work .dev-heading-section { display: flex; flex-direction: column; align-items: center; gap: 17px; margin-bottom: 36px; text-align: center; }
+.dev-work .dev-eyebrow { margin: 0; color: var(--dev-accent); font-size: 11px; font-weight: 600; line-height: 1.5; letter-spacing: 0.18em; text-transform: uppercase; }
+.dev-work .dev-heading-big {
+  display: flex; flex-direction: column; align-items: center; gap: 0; margin: 0;
+  font-family: var(--font-display, sans-serif); font-size: clamp(72px, 12vw, 140px);
+  font-weight: 800; line-height: 0.95; letter-spacing: -0.02em;
+}
+.dev-work .dev-heading-mask { display: block; overflow: hidden; padding: 0 0.04em 0.15em; margin-bottom: -0.1em; }
+.dev-work .dev-heading-word { display: block; color: var(--dev-text); }
+.dev-work .dev-heading-mask:last-child .dev-heading-word { color: transparent; -webkit-text-stroke: 2px var(--dev-accent); }
+.dev-work .dev-heading-sub { margin: 0; max-width: 450px; color: var(--dev-muted); font-size: 14px; line-height: 1.65; }
+
+/* Controls above the card leave the full mobile width for content. */
+.dev-work .dev-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 16px; }
+.dev-work .dev-project-tabs { display: flex; flex-wrap: wrap; gap: 6px; min-width: 0; }
+.dev-work .dev-project-tab {
+  position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 44px; padding: 10px 16px; border: 1px solid transparent; border-radius: 10px;
+  background: transparent; color: var(--dev-muted); font-size: 13px; font-weight: 600; cursor: pointer;
+  transition: color 180ms ease, background 180ms ease, border-color 180ms ease;
+}
+.dev-work .dev-project-tab.is-active { background: var(--dev-surface); border-color: var(--dev-border); color: var(--dev-text); }
+.dev-work .dev-tab-number { color: var(--dev-muted); font-size: 10px; font-variant-numeric: tabular-nums; }
+.dev-work .is-active .dev-tab-number { color: var(--card-accent); }
+.dev-work .dev-arrow-controls { display: flex; gap: 8px; flex-shrink: 0; }
+.dev-work .dev-arrow-controls--mobile { display: none; }
+.dev-work .dev-chevron {
+  display: grid; place-items: center; width: 44px; height: 44px; padding: 0;
+  border: 1px solid var(--dev-border); border-radius: 50%; background: transparent; color: var(--dev-text);
+  cursor: pointer; transition: color 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+/* Natural card height: no scroll pin, full-screen container or inner scrollbar. */
+.dev-work .dev-card-viewport { width: 100%; min-width: 0; border-radius: 22px; overflow: hidden; }
+.dev-work .dev-card {
+  position: relative; width: 100%; border: 1px solid var(--dev-border); border-radius: 22px;
+  background: var(--dev-surface); overflow: hidden; isolation: isolate;
+  box-shadow: 0 16px 45px rgb(0 0 0 / 12%); transition: border-color 250ms ease;
+}
+.dev-work .dev-card-main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.dev-work .dev-card-image-wrap {
+  position: relative; min-width: 0; min-height: 380px; overflow: hidden;
+  background: color-mix(in srgb, var(--dev-surface) 75%, var(--dev-bg));
+  border-right: 1px solid var(--dev-border); touch-action: pan-y pinch-zoom;
+}
+.dev-work .dev-card-image-wrap::before {
+  content: ""; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 75%, color-mix(in srgb, var(--card-accent) 12%, transparent), transparent 72%),
+    linear-gradient(color-mix(in srgb, var(--dev-border) 22%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--dev-border) 22%, transparent) 1px, transparent 1px);
+  background-size: auto, 36px 36px, 36px 36px; pointer-events: none;
+}
+.dev-work .dev-card-image {
+  position: absolute; inset: 0; display: block; width: 100%; height: 100%; padding: 40px 20px;
+  object-fit: contain; object-position: center; transition: transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.dev-work .dev-card-index { position: absolute; top: 17px; left: 20px; z-index: 1; color: var(--card-accent); font-size: 11px; font-weight: 600; letter-spacing: 0.06em; font-variant-numeric: tabular-nums; }
+.dev-work .dev-preview-label, .dev-work .dev-swipe-hint { position: absolute; bottom: 17px; left: 20px; color: var(--dev-muted); font-size: 10px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; }
+.dev-work .dev-swipe-hint { display: none; left: auto; right: 20px; letter-spacing: 0.02em; text-transform: none; }
+
+.dev-work .dev-card-body { display: flex; flex-direction: column; justify-content: center; gap: 22px; min-width: 0; padding: 34px; }
+.dev-work .dev-card-category { margin: 0 0 10px; color: var(--card-accent); font-size: 10px; font-weight: 600; line-height: 1.5; letter-spacing: 0.12em; text-transform: uppercase; }
+.dev-work .dev-card-title { margin: 0 0 10px; color: var(--dev-text); font-family: var(--font-display, sans-serif); font-size: clamp(30px, 3.3vw, 42px); font-weight: 750; line-height: 1.1; letter-spacing: -0.04em; }
+.dev-work .dev-card-summary { margin: 0; max-width: 43ch; color: var(--dev-muted); font-size: 14px; line-height: 1.65; }
+.dev-work .dev-highlights { display: flex; flex-wrap: wrap; gap: 7px; margin: 0; padding: 0; list-style: none; }
+.dev-work .dev-highlights li { padding: 6px 9px; border: 1px solid var(--dev-border); border-radius: 6px; color: var(--dev-text); font-size: 11px; font-weight: 500; line-height: 1.3; }
+.dev-work .dev-stack-row { display: flex; flex-wrap: wrap; align-items: center; gap: 9px 15px; margin: 0; padding: 0; list-style: none; }
+.dev-work .dev-stack-pill { display: inline-flex; align-items: center; gap: 6px; color: var(--dev-muted); font-size: 11px; font-weight: 500; line-height: 1.5; }
+.dev-work .dev-stack-pill svg { width: 13px; height: 13px; flex-shrink: 0; color: var(--card-accent); }
+.dev-work .dev-card-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 20px; }
+.dev-work .dev-demo-link {
+  display: inline-flex; align-items: center; justify-content: center; gap: 22px; min-height: 46px;
+  padding: 12px 17px; border: 1px solid transparent; border-radius: 9px; background: var(--card-accent); color: #091017;
+  font-size: 13px; font-weight: 700; line-height: 1.4; text-decoration: none; transition: filter 200ms ease, transform 200ms ease;
+}
+.dev-work .dev-demo-link svg { flex-shrink: 0; transition: transform 200ms ease; }
+.dev-work .dev-details-toggle {
+  display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 44px;
+  padding: 8px 2px; border: 0; background: transparent; color: var(--dev-muted);
+  font-size: 12px; font-weight: 500; line-height: 1.4; cursor: pointer; transition: color 200ms ease;
+}
+.dev-work .dev-details-icon { flex-shrink: 0; transition: transform 250ms ease; }
+.dev-work .dev-details-toggle[aria-expanded="true"] .dev-details-icon { transform: rotate(45deg); }
+
+/* All six features remain available in the expandable details. */
+.dev-work .dev-details-reveal { overflow: hidden; }
+.dev-work .dev-details-content { padding: 26px 32px 30px; border-top: 1px solid var(--dev-border); }
+.dev-work .dev-story-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 32px; margin-bottom: 24px; }
+.dev-work .dev-detail-heading { margin: 0 0 7px; color: var(--dev-text); font-size: 12px; font-weight: 600; line-height: 1.5; }
+.dev-work .dev-detail-heading--accent { color: var(--card-accent); }
+.dev-work .dev-story-grid p { margin: 0; color: var(--dev-muted); font-size: 13px; line-height: 1.7; }
+.dev-work .dev-feature-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px 24px; margin: 0; padding: 22px 0 0; border-top: 1px solid var(--dev-border); list-style: none; }
+.dev-work .dev-feature-row { display: flex; align-items: baseline; gap: 10px; min-width: 0; }
+.dev-work .dev-feature-num { color: var(--card-accent); font-size: 10px; font-variant-numeric: tabular-nums; }
+.dev-work .dev-feature-row h4 { margin: 0 0 4px; color: var(--dev-text); font-size: 12px; font-weight: 600; line-height: 1.5; }
+.dev-work .dev-feature-row p { margin: 0; color: var(--dev-muted); font-size: 12px; line-height: 1.6; }
+.dev-work .dev-meta-row { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: 18px; }
+.dev-work .dev-meta-note { color: var(--dev-muted); font-size: 11px; line-height: 1.5; }
+.dev-work .dev-counter { margin: 0; color: var(--dev-muted); font-size: 11px; letter-spacing: 0.07em; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.dev-work .dev-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+@media (hover: hover) and (pointer: fine) {
+  .dev-work .dev-card:hover { border-color: color-mix(in srgb, var(--card-accent) 40%, var(--dev-border)); }
+  .dev-work .dev-card-image-wrap:hover .dev-card-image { transform: scale(1.025); }
+  .dev-work .dev-project-tab:hover { color: var(--dev-text); background: var(--dev-surface); }
+  .dev-work .dev-chevron:hover { color: var(--dev-accent); border-color: var(--dev-accent); background: var(--dev-surface); }
+  .dev-work .dev-demo-link:hover { filter: brightness(1.08); transform: translateY(-2px); }
+  .dev-work .dev-demo-link:hover svg { transform: translate(2px, -2px); }
+  .dev-work .dev-details-toggle:hover { color: var(--dev-text); }
+}
+@media (max-width: 1000px) {
+  .dev-work .dev-card-main { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr); }
+  .dev-work .dev-card-body { padding: 26px; gap: 18px; }
+  .dev-work .dev-card-image { padding: 38px 12px; }
+  .dev-work .dev-card-actions { gap: 10px 16px; }
+}
+@media (max-width: 760px) {
+  .dev-work { padding: 72px 20px 60px; }
+  .dev-work .dev-heading-section { gap: 14px; margin-bottom: 28px; }
+  .dev-work .dev-card-main { grid-template-columns: 1fr; }
+  .dev-work .dev-card-image-wrap { min-height: 0; height: clamp(170px, 34vw, 245px); border-right: 0; border-bottom: 1px solid var(--dev-border); }
+  .dev-work .dev-card-image { padding: 22px 20px 26px; }
+  .dev-work .dev-card-index { top: 12px; left: 16px; font-size: 10px; }
+  .dev-work .dev-preview-label { bottom: 11px; left: 16px; font-size: 9px; }
+  .dev-work .dev-swipe-hint { display: block; bottom: 10px; right: 16px; font-size: 10px; }
+  .dev-work .dev-card-body { gap: 16px; padding: 24px; }
+  .dev-work .dev-card-category { margin-bottom: 7px; }
+  .dev-work .dev-card-title { margin-bottom: 8px; font-size: 32px; }
+  .dev-work .dev-card-summary { max-width: 54ch; }
+  .dev-work .dev-details-content { padding: 24px; }
+  .dev-work .dev-story-grid { gap: 24px; }
+  .dev-work .dev-feature-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 480px) {
+  .dev-work { padding: 60px 16px 48px; }
+  .dev-work .dev-heading-section { gap: 12px; margin-bottom: 24px; }
+  .dev-work .dev-heading-sub { max-width: 29ch; font-size: 13px; }
+  .dev-work .dev-eyebrow { font-size: 10px; letter-spacing: 0.14em; }
+  .dev-work .dev-toolbar { gap: 8px; margin-bottom: 12px; }
+  .dev-work .dev-project-tabs { gap: 4px; }
+  .dev-work .dev-project-tab { padding: 9px 12px; gap: 6px; font-size: 12px; }
+  .dev-work .dev-tab-number { display: none; }
+  .dev-work .dev-arrow-controls { gap: 6px; }
+  .dev-work .dev-card, .dev-work .dev-card-viewport { border-radius: 18px; }
+  .dev-work .dev-card-body { gap: 15px; padding: 20px; }
+  .dev-work .dev-card-title { font-size: 30px; }
+  .dev-work .dev-card-summary { font-size: 13px; line-height: 1.65; }
+  .dev-work .dev-highlights { gap: 6px; }
+  .dev-work .dev-highlights li { padding: 5px 7px; font-size: 10px; }
+  .dev-work .dev-stack-row { gap: 8px 12px; }
+  .dev-work .dev-stack-pill { font-size: 10px; }
+  .dev-work .dev-card-actions { justify-content: space-between; gap: 10px; }
+  .dev-work .dev-demo-link { padding: 12px 14px; gap: 20px; font-size: 12px; }
+  .dev-work .dev-details-toggle { font-size: 11px; gap: 6px; }
+  .dev-work .dev-details-content { padding: 22px 20px; }
+  .dev-work .dev-story-grid { grid-template-columns: 1fr; gap: 18px; margin-bottom: 20px; }
+  .dev-work .dev-feature-list { gap: 18px 16px; padding-top: 20px; }
+  .dev-work .dev-feature-row { gap: 7px; }
+  .dev-work .dev-feature-row h4, .dev-work .dev-feature-row p { font-size: 11px; }
+  .dev-work .dev-meta-row { margin-top: 14px; }
+  .dev-work .dev-meta-note { font-size: 10px; }
+}
+@media (max-width: 359px) {
+  .dev-work { padding-right: 12px; padding-left: 12px; }
+  .dev-work .dev-project-tab { padding-right: 9px; padding-left: 9px; }
+  .dev-work .dev-card-body { padding: 18px 16px; }
+  .dev-work .dev-highlights li { font-size: 9.5px; padding: 5px 6px; }
+  .dev-work .dev-feature-list { grid-template-columns: 1fr; }
+  .dev-work .dev-meta-note { max-width: 22ch; }
+}
+@media (max-width: 768px) {
+  .dev-work .dev-heading-big { font-size: clamp(48px, 13vw, 76px); }
+  .dev-work .dev-heading-mask:last-child .dev-heading-word { -webkit-text-stroke: 1.5px var(--dev-accent); }
+}
+/* Three project tabs stay on one row; navigation sits below on phones. */
+@media (max-width: 600px) {
+  .dev-work .dev-project-tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); width: 100%; }
+  .dev-work .dev-project-tab { padding-right: 8px; padding-left: 8px; }
+  .dev-work .dev-tab-number { display: none; }
+  .dev-work .dev-arrow-controls--desktop, .dev-work .dev-meta-note { display: none; }
+  .dev-work .dev-arrow-controls--mobile { display: flex; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dev-work *, .dev-work *::before, .dev-work *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  .dev-work .dev-card-image-wrap:hover .dev-card-image, .dev-work .dev-demo-link:hover, .dev-work .dev-demo-link:hover svg { transform: none; }
+}

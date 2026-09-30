@@ -1,0 +1,284 @@
+.wis-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 64px;
+}
+
+.wis-grid {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 48px;
+  width: 100%;
+  perspective: 1600px;
+}
+
+/* ── Left column ── */
+.wis-left {
+  flex: 0 0 48%;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  min-width: 0;
+}
+
+.wis-eyebrow {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.wis-heading {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 5.2vw, 68px);
+  font-weight: 800;
+  line-height: 1.05;
+  color: var(--text);
+  margin: 0;
+}
+
+.wis-heading-accent { color: var(--accent); }
+
+.wis-sub {
+  font-family: var(--font-body);
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: var(--muted);
+  margin: 18px 0 0;
+  max-width: 440px;
+}
+
+.wis-tools {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.wis-tools-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.wis-tools-row {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+}
+
+.wis-tool {
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid #1a3050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+.wis-tool:hover {
+  transform: translateY(-3px);
+  border-color: rgba(245,197,24,0.35);
+  background: rgba(245,197,24,0.06);
+  color: var(--accent);
+}
+
+/* ── Right column: one-card deck ── */
+.wis-deck-wrap {
+  flex: 0 0 380px;
+  width: 100%;
+  margin-left: auto;
+}
+
+.wis-deck {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  overflow: visible;
+  border-radius: 22px;
+  perspective: 900px;
+}
+
+.wis-card {
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+  padding: 26px 26px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+  will-change: transform, opacity;
+  box-shadow: 0 24px 55px rgba(0,0,0,0.45);
+  transform-origin: bottom center;
+  backface-visibility: hidden;
+}
+
+.wis-card--navy {
+  background: linear-gradient(160deg, var(--surface) 0%, var(--bg-soft) 100%);
+  border: 1px solid var(--surface-border);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.22);
+}
+
+[data-theme="light"] .wis-card--navy {
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 14px 32px rgba(15, 23, 42, 0.08);
+}
+.wis-card--yellow {
+  background: linear-gradient(155deg, #FFDE59 0%, var(--accent) 100%);
+  border: 1px solid rgba(10,14,36,0.15);
+}
+
+.wis-card-index {
+  font-family: var(--font-display);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 3px 9px;
+  border-radius: 20px;
+  align-self: flex-start;
+}
+.wis-card--navy .wis-card-index {
+  color: var(--muted);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--surface-border);
+}
+.wis-card--yellow .wis-card-index {
+  color: var(--bg);
+  background: rgba(10,14,36,0.12);
+  border: 1px solid rgba(10,14,36,0.2);
+}
+
+.wis-card-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+.wis-card--navy .wis-card-icon {
+  background: rgba(56,189,248,0.12);
+  border: 1px solid rgba(56,189,248,0.3);
+  color: #38BDF8;
+}
+.wis-card--yellow .wis-card-icon {
+  background: rgba(10,14,36,0.85);
+  border: 1px solid rgba(10,14,36,0.9);
+  color: var(--accent);
+}
+
+.wis-card-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 800;
+  margin: 0;
+}
+.wis-card--navy .wis-card-title { color: var(--text); }
+.wis-card--yellow .wis-card-title { color: var(--bg); }
+
+.wis-card-desc {
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0;
+}
+.wis-card--navy .wis-card-desc { color: var(--muted); }
+.wis-card--yellow .wis-card-desc { color: rgba(10,14,36,0.75); }
+
+.wis-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: auto;
+}
+
+.wis-card-tag {
+  font-family: var(--font-body);
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 4px 11px;
+  border-radius: 20px;
+}
+.wis-card--navy .wis-card-tag {
+  color: #38BDF8;
+  background: rgba(56,189,248,0.08);
+  border: 1px solid rgba(56,189,248,0.2);
+}
+.wis-card--yellow .wis-card-tag {
+  color: var(--accent);
+  background: rgba(10,14,36,0.85);
+  border: 1px solid rgba(10,14,36,0.9);
+}
+
+.wis-deck-progress {
+  display: flex;
+  gap: 6px;
+  margin-top: 16px;
+  justify-content: center;
+}
+
+.wis-deck-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #1a3050;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.wis-deck-dot.is-active {
+  background: var(--accent);
+  transform: scale(1.25);
+}
+
+/* ══════════════════ Responsive ══════════════════ */
+@media (max-width: 900px) {
+  .wis-section {
+    min-height: auto;
+    display: block;
+    padding: 80px 24px;
+  }
+  .wis-grid {
+    flex-direction: column;
+    gap: 36px;
+  }
+  .wis-left { flex-basis: auto; }
+  .wis-deck-wrap { flex-basis: auto; max-width: 100%; }
+  .wis-deck {
+    height: auto;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border-radius: 0;
+  }
+  .wis-card { position: relative; inset: auto; }
+  .wis-deck-progress { display: none; }
+}
+@media (max-width: 768px) {
+  .wis-section { padding: 64px 24px; }
+  .wis-card { padding: 22px 20px; }
+  .wis-tool { width: 38px; height: 38px; }
+}
+@media (max-width: 480px) {
+  .wis-section { padding: 56px 16px; }
+  .wis-card { padding: 18px 16px; gap: 8px; }
+  .wis-card-title { font-size: 18px; }
+  .wis-tools-row { flex-wrap: wrap; }
+}

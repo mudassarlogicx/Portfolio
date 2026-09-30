@@ -22,35 +22,35 @@ const CARDS = [
     title: "Web Applications",
     icon: Globe,
     theme: "navy",
-    desc: "Fast, scalable web apps built on clean architecture — from admin dashboards to real-time systems that update instantly across every session.",
+    desc: "Fast, scalable web apps built on clean architecture: from admin dashboards to real-time systems that update instantly across every session.",
     tags: ["React JS", "Real-time Data", "REST APIs", "Data Handling"],
   },
   {
     title: "Mobile Applications",
     icon: Smartphone,
     theme: "yellow",
-    desc: "Cross-platform apps that feel native on iOS and Android from a single codebase — built for real-world use, not just demos.",
+    desc: "Cross-platform apps that feel native on iOS and Android from a single codebase, built for real-world use, not just demos.",
     tags: ["React Native", "Expo", "Offline Support", "Cross-Platform"],
   },
   {
     title: "E-Commerce Websites",
     icon: ShoppingCart,
     theme: "navy",
-    desc: "Online stores built to convert — from product catalogs and secure checkout to a fast, mobile-friendly shopping experience.",
+    desc: "Online stores built to convert: from product catalogs and secure checkout to a fast, mobile-friendly shopping experience.",
     tags: ["Shopify", "Product Catalogs", "Payments", "Performance"],
   },
   {
     title: "Static Websites",
     icon: LayoutGrid,
     theme: "yellow",
-    desc: "Lightweight, fast-loading sites for portfolios, landing pages, and small businesses — built to load instantly and rank well.",
+    desc: "Lightweight, fast-loading sites for portfolios, landing pages, and small businesses, built to load instantly and rank well.",
     tags: ["WordPress", "Landing Pages", "SEO Basics", "Fast Load"],
   },
   {
     title: "Digital Design",
     icon: Palette,
     theme: "navy",
-    desc: "Scroll-stopping social content and graphics designed to match your brand — consistent, polished, and built to grab attention.",
+    desc: "Scroll-stopping social content and graphics designed to match your brand: consistent, polished, and built to grab attention.",
     tags: ["Social Creatives", "Brand Consistency", "Posters & Banners"],
   },
   {
@@ -64,11 +64,10 @@ const CARDS = [
     title: "Video Editing",
     icon: Clapperboard,
     theme: "navy",
-    desc: "Polished, engaging edits for reels, cinematic trailers, and promotional content — built to hold attention and drive action.",
+    desc: "Polished, engaging edits for reels, cinematic trailers, and promotional content, built to hold attention and drive action.",
     tags: ["Reels & Shorts", "Trailer Editing", "Color Grading"],
   },
 ];
-
 const TOOLS = [
   { name: "React", Icon: Atom },
   { name: "React Native", Icon: Smartphone },

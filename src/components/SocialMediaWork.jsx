@@ -50,7 +50,7 @@ function BlueCard() {
         <span className="sm-card-index">01</span>
       </div>
       <div className="sm-divider sm-divider--blue" />
-      <p className="sm-card-desc">Currently working with DevsByte across the full digital spectrum — website development, social media content creation, and managing Meta ad campaigns to grow the brand online.</p>
+      <p className="sm-card-desc">Currently working with DevsByte across the full digital spectrum, including website development, social media content creation, and managing Meta ad campaigns to grow the brand online.</p>
       <div className="sm-tags-row">
         {["Website Development", "Content Creation", "Meta Campaigns", "Brand Growth"].map(s => (
           <span key={s} className="sm-tag sm-tag--blue">{s}</span>
@@ -80,7 +80,7 @@ function YellowCard() {
         <span className="sm-card-index">02</span>
       </div>
       <div className="sm-divider sm-divider--yellow" />
-      <p className="sm-card-desc">Handled complete digital presence for a skin and laser clinic — from building their content identity to running targeted Meta campaigns that drove real client inquiries.</p>
+      <p className="sm-card-desc">Handled complete digital presence for a skin and laser clinic, from building their content identity to running targeted Meta campaigns that drove real client inquiries.</p>
       <div className="sm-tags-row">
         {["Content Creation", "Meta Campaigns", "Visual Strategy", "Brand Consistency"].map(s => (
           <span key={s} className="sm-tag sm-tag--yellow">{s}</span>
@@ -109,7 +109,7 @@ function RedCard() {
         <span className="sm-card-index">03</span>
       </div>
       <div className="sm-divider sm-divider--red" />
-      <p className="sm-card-desc">Managed the complete social media presence for the Aspire College Gujar Khan campus — planning content, designing graphics, and running the institute's Facebook page to grow consistent audience engagement.</p>
+      <p className="sm-card-desc">Managed the complete social media presence for the Aspire College Gujar Khan campus, from planning content and designing graphics to running the institute's Facebook page to grow consistent audience engagement.</p>
       <div className="sm-tags-row">
         {["Content Creation", "Graphic Design", "Facebook Management", "Brand Consistency"].map(s => (
           <span key={s} className="sm-tag sm-tag--red">{s}</span>

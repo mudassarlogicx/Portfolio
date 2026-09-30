@@ -102,7 +102,7 @@ function ProjectCard({ project, index, reduceMotion, onSwipe }) {
   const touchStart = useRef(null);
   const detailsId = `development-${project.id}-details`;
   const hasDetails = project.showDetails !== false && Boolean(project.features?.length);
-  const linkLabel = project.linkLabel || "Live demo";
+  const linkLabel = project.linkLabel || "View Project";
 
   // Swipe only on the preview. Vertical page scrolling stays native.
   const handleTouchStart = (event) => {

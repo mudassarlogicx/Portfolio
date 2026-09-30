@@ -13,11 +13,11 @@ const experiences = [
     id: "cursa",
     logo: CursaLogoImg,
     company: "Cursa Health",
-    desc: "Healthcare-focused development team — building and maintaining digital platforms for associate medical practices and external client projects.",
+    desc: "Healthcare-focused development team: building and maintaining digital platforms for associate medical practices and external client projects.",
     role: "Software Engineer",
     date: "May 2025 — Present",
     active: true,
-    what: "Building cross-platform applications using React JS and React Native, and responsive websites in WordPress — for Cursa Health's associate doctors as well as broader client projects, integrated with custom backend systems.",
+    what: "Building cross-platform applications using React JS and React Native, and responsive websites in WordPress. Built for Cursa Health's associate doctors as well as broader client projects, integrated with custom backend systems.",
     tech: ["React JS", "React Native", "Angular", "Cross-Platform", "Web Apps", "Mobile Apps", "REST APIs", "UI/UX"],
     links: [
       { label: "Website",  href: "https://cursahealth.com/",                          icon: "globe"    },

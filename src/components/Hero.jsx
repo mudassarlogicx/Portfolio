@@ -100,8 +100,8 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0,  filter: "blur(0px)" }}
             transition={{ duration: 0.7, ease, delay: 0.65 }}
           >
-            Full-stack development meets social media growth and design 
-            — websites, mobile apps, and brand content, all handled by 
+            Full-stack development meets social media growth and design,
+            including websites, mobile apps, and brand content, all handled by
             one person, start to finish.
           </motion.p>
 

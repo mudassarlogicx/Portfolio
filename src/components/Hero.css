@@ -31,7 +31,7 @@
   font-weight: 800;
   font-size: clamp(2.6rem, 7vw, 6.2rem);
   line-height: 0.95;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.06em;
   margin: 0 0 16px;
   color: var(--text);
   display: flex;
@@ -247,8 +247,9 @@
 
   .hero__title {
     max-width: 320px;
-    margin-bottom: -10px; /* Force wraps for smaller screens */
+    margin-bottom: -30px; /* Force wraps for smaller screens */
   }
+  /* .hero__eyebrow { margin-bottom: -30px; } */
 
   .hero__visual {
     height: 280px;
@@ -277,16 +278,16 @@
   .hero__title {
     font-size: clamp(2.8rem, 14vw, 3.5rem);
     max-width: 280px; /* "build." remains exactly on 3rd line here too */
-    margin-bottom: -10px; 
+    margin-bottom: -25px; 
   }
 
   .hero__eyebrow {
-    margin-bottom: -8px;
+    margin-bottom: -22px;
   }
 
   .hero__subtitle {
     font-size: 15px;
-    margin-bottom: 14px; 
+    margin-bottom: -10px; 
     line-height: 1.5;
   }
 
@@ -294,7 +295,7 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
-    margin-bottom: 10px;
+    margin-bottom: -10px;
     margin-top: 0;
     width: 100%;
   }
@@ -311,6 +312,7 @@
 
   .hero__portrait {
     max-height: 240px;
+    margin-bottom:-20px
   }
 
   .hero__glow {

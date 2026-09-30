@@ -3,7 +3,7 @@ import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { Megaphone, Database, Video, PenTool } from "lucide-react";
 import { FaReact, FaJs, FaCss3Alt, FaWhatsapp, FaWordpress, FaShopify } from "react-icons/fa";
 import { SiFirebase, SiTailwindcss, SiExpo, SiTypescript } from "react-icons/si";
-import portrait from "../assets/hero-portrait.png";
+import portrait from "../assets/hero-portrait.webp";
 import "./Hero.css";
 
 const stack = [

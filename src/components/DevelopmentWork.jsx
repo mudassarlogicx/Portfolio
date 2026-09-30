@@ -2,9 +2,9 @@ import { useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { FaReact } from "react-icons/fa";
 import { SiElementor, SiExpo, SiFirebase, SiTailwindcss, SiWordpress } from "react-icons/si";
-import OdoNovaImg from "../assets/odonova.png";
-import RestoPOSImg from "../assets/restopos.png";
-import DevsByteImg from "../assets/devsbyte.png";
+import OdoNovaImg from "../assets/odonova.webp";
+import RestoPOSImg from "../assets/restopos.webp";
+import DevsByteImg from "../assets/devsbyte.webp";
 import "./DevelopmentWork.css";
 
 // Update project content and demo URLs here.
